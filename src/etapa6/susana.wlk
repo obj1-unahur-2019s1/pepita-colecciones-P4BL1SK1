@@ -1,7 +1,3 @@
-/*
- * Traer, e importar, los objetos de la etapa 4.
- */
-
 import pepita.*
 import masAves.*
 import comidas.*

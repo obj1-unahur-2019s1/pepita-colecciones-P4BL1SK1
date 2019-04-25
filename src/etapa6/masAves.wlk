@@ -2,6 +2,7 @@
 object pepon {
 	var energia = 0
 	
+	method energia(){return energia}
 	method comer(cosa, cuanto) { 
 		energia += (cosa.energiaPorGramo() / 2) * cuanto
 	}  
@@ -11,12 +12,13 @@ object pepon {
 	method haceLoQueQuieras() { 
 		self.volar(1)
 	}
+	method pudeVolar(unosKms){
+		return energia>= 1 + unosKms * 0.5}
 }
 
 object pipa {
 	var acumuladoKmsRecorridos = 0
 	var acumuladoGramosIngeridos = 0
-	
 	method comer(cosa, gramos) {
 		acumuladoGramosIngeridos += gramos
 	}
@@ -24,13 +26,9 @@ object pipa {
 	method volar(kms) {
 		acumuladoKmsRecorridos += kms
 	}
-	
-	/*
-	 * cuando le dicen a pipa que haga lo que quiera, no hace nada
-	 */
-	method haceLoQueQuieras() { }   // queda asi
-	// pregunta: ¿por qué es necesario agregar este método, sin código?
-	
+	method haceLoQueQuieras() { }
 	method acumuladoKmsRecorridos() { return acumuladoKmsRecorridos }
-	method acumuladoGramosIngeridos() { return acumuladoGramosIngeridos }
+	method acumuladoGramosIngeridos() { return acumuladoGramosIngeridos}
+	method puedeVolar(){return true}
+	method energia(){return 0}
 }

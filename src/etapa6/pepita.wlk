@@ -9,7 +9,7 @@ object pepita {
 	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
 	method volar(kms) { energia -= kms + 10 }
 	
-	// metodos nuevos
+
 	method estaDebil() { return self.energia() < 50 }  
 	method estaFeliz() { return self.energia().between(500, 1000) }
 	method cuantoQuiereVolar() { 
@@ -18,11 +18,11 @@ object pepita {
 		if (energia % 20 == 0) { cuanto += 15 }
 		return cuanto
 	}
-	method haceLoQueQuieras() { 
-		if (self.estaDebil()) {
-			self.comer(alpiste, 20)
-		} else if (self.estaFeliz()) {
-			self.volar(8)
-		} 
+	method haceLoQueQuieras(){if (self.estaDebil()){self.comer(alpiste, 20)} 
+		else if (self.estaFeliz()){self.volar(8)}
+		}
+		method puedeVolar(unosKms){
+		return energia>=10+unosKms
 	}
+
 }
